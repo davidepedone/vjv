@@ -1,7 +1,7 @@
 vjv
 ===
 
-[![Build Status](https://travis-ci.org/davidepedone/vjv.svg?branch=master)](http://travis-ci.org/tcs-de/nodecache)
+[![Build Status](https://travis-ci.org/davidepedone/vjv.svg?branch=master)](http://travis-ci.org/davidepedone/vjv)
 [![NPM version](https://badge.fury.io/js/vjv.svg)](http://badge.fury.io/js/vjv)
 
 
@@ -15,9 +15,54 @@ VarArgs to JSON / JSON to VarArgs node module
   npm install vjv
 ```
 
+# Examples:
+
+## Initialize (INIT):
+
+```js
+var vjv = require('vjv');
+```
+
+### Configuration
+
+- `arraySeparator`: Default |
+- `stringWrapper`: Default "
+- `doubledash`: used only when converting from JSON to varargs. Default false
+- `commandPrefix`: Default cmd 
+
+```js
+var vjv = require('vjv');
+vjv.config({arraySeparator:'@',stringWrapper:'#',commandPrefix:'command'});
+```
+
+## JSON To VarArgs (j2v)
+`varargs = vjv.j2v(json)`
+
+Parse JSON and return command line string.
+
+```js
+json = {cmd:'command',a:'string',b:false,c:0,d:['item1','item2'],e:'a value with spaces'};
+varargs = vjv.j2v(json);
+// command -a string -b false -c 0 -d item1|item2 -e "a value with spaces"
+```
+
+## VarArgs To JSON (v2j)
+`json = vjv.v2j(varargs,command)`
+
+Parse command line string and return JSON.
+
+```js
+varargs = 'acommand -a #custom string wrapper# -b #array of#@#custom string#@wrapper';
+// configure options
+vjv.config({arraySeprator:'@',stringWrapper:'#',commandPrefix:'cmdPrefix'});
+json = vjv.v2j(varargs,'acommand');
+// {cmdPrefix:'acommand',a:'custom string wrapper',b:['array of','custom string','wrapper']}
+```
+
 ## Release History
 |Version|Date|Description|
 |:--:|:--:|:--|
+|v0.2.0|2014-07-23|Custom command prefix option|
 |v0.1.0|2014-07-23|First release|
 
 [![NPM](https://nodei.co/npm-dl/vjv.png?months=6)](https://nodei.co/npm/vjv/)
