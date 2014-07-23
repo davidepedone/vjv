@@ -17,7 +17,7 @@ VarArgs to JSON / JSON to VarArgs node module
 
 # Examples:
 
-## Initialize (INIT):
+## Initialize (Get singleton instance):
 
 ```js
 var vjv = require('vjv');
