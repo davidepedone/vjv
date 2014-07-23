@@ -5,7 +5,7 @@ describe('VarArgs To JSON',function(){
 	describe('#v2j()',function(){
 		it('should properly parse string, boolean, int and arrays',function(){
 			var vargs = 'command -a string -b false -c 0 -d item1|item2';
-			vjv.config({arraySeparator:"|",stringWrapper:'"',doubledash:false});
+			vjv.config({arraySeparator:"|",stringWrapper:'"',doubledash:false,commandPrefix:'cmd'});
 			var result = vjv.v2j(vargs,'command');
 			expect(result).to.deep.equal({cmd:'command',a:'string',b:false,c:0,d:['item1','item2']});
 		});
@@ -32,6 +32,12 @@ describe('VarArgs To JSON',function(){
 			vjv.config({stringWrapper:"#",arraySeparator:"@"});
 			var result = vjv.v2j(vargs,'command');
 			expect(result).to.deep.equal({cmd:'command',a:'custom string wrapper',b:['array of','custom string','wrapper']});
+		});
+		it('should properly manage custom command prefix',function(){
+			var vargs = 'command -a #custom string wrapper# -b #array of#@#custom string#@wrapper';
+			vjv.config({commandPrefix:'testPrefix'});
+			var result = vjv.v2j(vargs,'command');
+			expect(result).to.deep.equal({testPrefix:'command',a:'custom string wrapper',b:['array of','custom string','wrapper']});
 		});
 	});
 });
