@@ -1,8 +1,26 @@
 vjv
 ===
 
+[![Build Status](https://travis-ci.org/davidepedone/vjv.svg?branch=master)](http://travis-ci.org/tcs-de/nodecache)
+[![NPM version](https://badge.fury.io/js/vjv.svg)](http://badge.fury.io/js/vjv)
+
+
+[![NPM](https://nodei.co/npm/vjv.png?downloads=true&stars=true)](https://nodei.co/npm/vjv/)
+
 VarArgs to JSON / JSON to VarArgs node module
 
+# Install
+
+```bash
+  npm install vjv
+```
+
+## Release History
+|Version|Date|Description|
+|:--:|:--:|:--|
+|v0.1.0|2014-07-23|First release|
+
+[![NPM](https://nodei.co/npm-dl/node-cache.png?months=6)](https://nodei.co/npm/node-cache/)
 
 # License 
 
