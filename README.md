@@ -20,7 +20,7 @@ VarArgs to JSON / JSON to VarArgs node module
 |:--:|:--:|:--|
 |v0.1.0|2014-07-23|First release|
 
-[![NPM](https://nodei.co/npm-dl/node-cache.png?months=6)](https://nodei.co/npm/node-cache/)
+[![NPM](https://nodei.co/npm-dl/vjv.png?months=6)](https://nodei.co/npm/vjv/)
 
 # License 
 
