@@ -5,6 +5,7 @@ describe('JSON to VarArgs',function(){
 	describe('#j2v()',function(){
 		it('should properly parse string, boolean, int and arrays',function(){
 			var json = {cmd:'command',a:'string',b:false,c:0,d:['item1','item2']};
+			vjv.config({arraySeparator:"|",stringWrapper:'"',doubledash:false,commandPrefix:'cmd'});
 			var result = vjv.j2v(json);
 			expect(result).to.equal('command -a string -b false -c 0 -d item1|item2');
 		});

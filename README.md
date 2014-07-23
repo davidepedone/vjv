@@ -62,6 +62,7 @@ json = vjv.v2j(varargs,'acommand');
 ## Release History
 |Version|Date|Description|
 |:--:|:--:|:--|
+|v0.2.1|2014-07-23|Doubledash bug fix|
 |v0.2.0|2014-07-23|Custom command prefix option|
 |v0.1.0|2014-07-23|First release|
 

@@ -1,6 +1,6 @@
 {
   "name": "vjv",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "VarArgs to JSON / JSON to VarArgs",
   "main": "index.js",
   "scripts": {
