@@ -27,7 +27,6 @@ var vjv = require('vjv');
 
 - `arraySeparator`: Default |
 - `stringWrapper`: Default "
-- `doubledash`: used only when converting from JSON to varargs. Default false
 - `commandPrefix`: Default cmd 
 
 ```js
@@ -59,9 +58,19 @@ json = vjv.v2j(varargs,'acommand');
 // {cmdPrefix:'acommand',a:'custom string wrapper',b:['array of','custom string','wrapper']}
 ```
 
+Parse `process.argv`.
+
+```js
+node myscript --param value -a anotherValue
+string = process.argv.slice(2).toString().replace(/,/g,' ');
+json = vjv.v2j(string);
+// {param:'value',a:'anotherValue'}
+```
+
 ## Release History
 |Version|Date|Description|
 |:--:|:--:|:--|
+|v0.3.0|2014-07-25|Autorecognize wheen doubledash is needed|
 |v0.2.1|2014-07-23|Doubledash bug fix|
 |v0.2.0|2014-07-23|Custom command prefix option|
 |v0.1.0|2014-07-23|First release|

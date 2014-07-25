@@ -1,8 +1,8 @@
 {
   "name": "vjv",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "VarArgs to JSON / JSON to VarArgs",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "mocha -R spec -u tdd"
   },
@@ -10,16 +10,13 @@
     "type": "git",
     "url": "git://github.com/davidepedone/vjv.git"
   },
-  "keywords": [
-    "varargs",
-    "json",
-    "parser",
-    "node"
-  ],
-  "author": "Davide Pedone <davide.pedone@gmail.com>",
+  "homepage":"https://github.com/davidepedone/vjv",
   "bugs": {
     "url": "https://github.com/davidepedone/vjv/issues"
   },
+  "keywords": ["varargs","arguments","argv","json","parser","node"],
+  "tags": ["varargs","arguments","argv","json","parser","node"],
+  "author": "Davide Pedone <davide.pedone@gmail.com> (http://www.davidepedone.it)",
   "devDependencies": {
     "mocha": "~1.20.1",
     "chai": "~1.9.1"
